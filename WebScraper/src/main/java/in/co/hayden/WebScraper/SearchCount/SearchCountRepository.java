@@ -1,0 +1,13 @@
+package in.co.hayden.WebScraper.SearchCount;
+
+import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface SearchCountRepository extends MongoRepository<SearchCount, ObjectId> {
+    Optional<SearchCount> findBySearchTerm(String searchTerm);
+
+}
